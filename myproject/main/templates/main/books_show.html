@@ -1,28 +1,36 @@
+{% extends "main/main_template.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
+{% block content %}
+
 <head>
-    <link rel="stylesheet" href="{% static 'main/styles.css' %}">
-    <meta charset="UTF-8">
     <title>Library</title>
 </head>
 <body>
-    <nav>
+    <nav class="bg-white shadow-lg">
         <div>
-            <div>
-                <div>
-                    <div class="flex">
-                        <img class="h-14 w-16" src="{% static 'main/images/book.png' %}" alt="logo_book">
+            <div class="">
+                <div class="flex space-x-7">
+                    <div>
+                        <a href="/lib/books/" class="flex items-center px-2 py-4 font-semibold">
+                        <img class="h-14 w-14" src="{% static 'main/images/book.png' %}" alt="logo_book">
                         <span class="text-xl">Your library</span>
+                        </a>
+                    </div>
+                    <div class="flex items-center">
+                        <a href="#" class=" px-2 py-4 font-semibold">Home</a>
+                        <a href="#" class=" px-2 py-4 font-semibold">Home</a>
+                        <a href="#" class=" px-2 py-4 font-semibold">Home</a>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
     {% for book in books%}
+
         <a href="{% url 'main:temp_book' book.id %}">
         Name: {{book.name}} | Author: {{book.author}} | Release year: {{book.release}}    <br/>
         </a>
     {% endfor %}
 </body>
-</html>
+
+{% endblock content %}
