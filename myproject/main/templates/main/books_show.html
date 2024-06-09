@@ -4,9 +4,21 @@
 <head>
     <link rel="stylesheet" href="{% static 'main/styles.css' %}">
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Library</title>
 </head>
-<body class="text-blue-600">
+<body>
+    <nav>
+        <div>
+            <div>
+                <div>
+                    <div class="flex">
+                        <img class="h-14 w-16" src="{% static 'main/images/book.png' %}" alt="logo_book">
+                        <span class="text-xl">Your library</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
     {% for book in books%}
         <a href="{% url 'main:temp_book' book.id %}">
         Name: {{book.name}} | Author: {{book.author}} | Release year: {{book.release}}    <br/>
