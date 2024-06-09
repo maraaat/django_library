@@ -2,11 +2,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+    <link rel="stylesheet" href="{% static 'main/styles.css' %}">
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+<body class="text-blue-600">
     {% for book in books%}
         <a href="{% url 'main:temp_book' book.id %}">
         Name: {{book.name}} | Author: {{book.author}} | Release year: {{book.release}}    <br/>
